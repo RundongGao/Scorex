@@ -45,9 +45,6 @@ case class PrivateKey25519(privKeyBytes: PrivateKey, publicKeyBytes: PublicKey) 
   override lazy val companion: SecretCompanion[PrivateKey25519] = PrivateKey25519Companion
 
   override lazy val publicImage: PublicKey25519Proposition = PublicKey25519Proposition(publicKeyBytes)
-  override type M = PrivateKey25519
-
-  override def serializer: Serializer[PrivateKey25519] = PrivateKey25519Serializer
 }
 
 object PrivateKey25519Serializer extends Serializer[PrivateKey25519] {

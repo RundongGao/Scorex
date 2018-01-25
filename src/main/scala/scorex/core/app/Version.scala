@@ -9,11 +9,7 @@ object Version {
     Version(splitted(0).toByte, splitted(1).toByte, splitted(2).toByte)
   }
 }
-case class Version(firstDigit: Byte, secondDigit: Byte, thirdDigit: Byte) extends BytesSerializable {
-  override type M = Version
-
-  override def serializer: Serializer[Version] = ApplicationVersionSerializer
-}
+case class Version(firstDigit: Byte, secondDigit: Byte, thirdDigit: Byte) extends BytesSerializable
 
 object ApplicationVersionSerializer extends Serializer[Version] {
   val SerializedVersionLength = 3

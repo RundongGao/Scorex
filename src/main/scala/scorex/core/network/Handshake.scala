@@ -17,10 +17,6 @@ case class Handshake(applicationName: String,
 
   require(Option(applicationName).isDefined)
   require(Option(protocolVersion).isDefined)
-
-  override type M = Handshake
-
-  override def serializer: Serializer[Handshake] = HandshakeSerializer
 }
 
 object HandshakeSerializer extends Serializer[Handshake] {

@@ -22,10 +22,6 @@ case class Message[Content](spec: MessageSpec[Content],
   }
 
   lazy val dataLength: Int = dataBytes.length
-
-  override type M = Message[Content]
-
-  override def serializer: Serializer[Message[Content]] = new MessageSerializer[Content]
 }
 
 class MessageSerializer[Content] extends Serializer[Message[Content]] {
